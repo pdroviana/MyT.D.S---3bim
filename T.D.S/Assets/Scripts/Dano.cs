@@ -50,7 +50,12 @@ public class Dano : MonoBehaviour
             other.gameObject.GetComponent<Personagem>().setVida(novaVida);
             Destroy(gameObject);
         }
-        
+
+        if (other.gameObject.CompareTag("Obstaculo"))
+        {
+            Destroy(gameObject);
+        }
+            
         
         
     }

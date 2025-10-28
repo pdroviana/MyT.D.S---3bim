@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Inimigo
   - Arma
+  - Obstaculo
   layers:
   - Default
   - TransparentFX
