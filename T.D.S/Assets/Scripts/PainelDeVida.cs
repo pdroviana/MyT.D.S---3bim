@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PainelDeVida : MonoBehaviour
@@ -30,7 +31,11 @@ public class PainelDeVida : MonoBehaviour
         
         sliderVidas.value = personagem.getVida();
         sliderEnergia.value = personagem.getEnergia();
-        
+
+        if (personagem.getVida() == 0)
+        {
+            SceneManager.LoadScene(1);
+        }
         
     }
 }
