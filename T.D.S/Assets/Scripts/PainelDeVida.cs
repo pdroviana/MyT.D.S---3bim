@@ -31,6 +31,7 @@ public class PainelDeVida : MonoBehaviour
         
         sliderVidas.value = personagem.getVida();
         sliderEnergia.value = personagem.getEnergia();
+        
 
         if (personagem.getVida() == 0)
         {
