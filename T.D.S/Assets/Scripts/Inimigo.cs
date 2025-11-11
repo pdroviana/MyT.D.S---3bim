@@ -71,7 +71,7 @@ public class Inimigo : Personagem
             }
         }
 
-        if (getVida() < 0)
+        if (getVida() <= 0)
         {
             animator.SetTrigger("Morte");
         }
@@ -85,7 +85,8 @@ public class Inimigo : Personagem
         //gameObject.SetActive(false);
         Debug.Log("Teste...");
         Destroy(gameObject);
-       
+        
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
