@@ -3,7 +3,7 @@ using UnityEngine;
 public class Personagem : MonoBehaviour
 {
     [SerializeField]
-    private int vida;
+    public int vida;
     [SerializeField]
     private int energia;
     [SerializeField]

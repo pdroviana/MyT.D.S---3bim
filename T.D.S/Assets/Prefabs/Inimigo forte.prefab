@@ -182,6 +182,7 @@ MonoBehaviour:
   energia: 10
   velocidade: 3
   dano: 10
+  pontosAoMorrer: 20
   raioDeVisao: 20
   _visaoCollider2D: {fileID: 311889329686642699}
   posicaoDoPlayer: {fileID: 0}

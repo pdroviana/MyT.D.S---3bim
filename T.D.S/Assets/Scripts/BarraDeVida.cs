@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BarraDeVida : MonoBehaviour
@@ -26,5 +27,6 @@ public class BarraDeVida : MonoBehaviour
             vidasRestantes = inimigo.getVida();
             sliderVidasRestantes.value = vidasRestantes;
         }
+        
     }
 }

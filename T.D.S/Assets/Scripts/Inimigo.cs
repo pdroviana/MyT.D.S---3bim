@@ -5,6 +5,10 @@ public class Inimigo : Personagem
 {
     [SerializeField] private int dano = 1;
     
+    
+    [SerializeField] 
+    public int pontosAoMorrer;
+    
     public float raioDeVisao = 1;
     public CircleCollider2D _visaoCollider2D;
 
@@ -14,6 +18,23 @@ public class Inimigo : Personagem
     private Animator animator;
 
     private bool andando = false;
+
+
+
+    public void LevarDano(int dano)
+    {
+        vida -= dano;
+        if (getVida() <= 0)
+            Morrer();
+    }
+
+
+    void Morrer()
+    {
+        PontosManager.Addpontos(pontosAoMorrer);
+    }
+    
+    
     
     public void setDano(int dano)
     {

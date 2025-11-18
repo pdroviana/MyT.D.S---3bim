@@ -32,6 +32,7 @@ public class BarraDeVida2 : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+        
     }
 }
 
