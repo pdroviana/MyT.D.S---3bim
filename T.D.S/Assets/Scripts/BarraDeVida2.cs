@@ -30,7 +30,7 @@ public class BarraDeVida2 : MonoBehaviour
         
         if (sliderVidasRestantes.value == 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
         
     }

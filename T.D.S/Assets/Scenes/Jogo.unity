@@ -226,7 +226,7 @@ MonoBehaviour:
   vida: 30
   energia: 100
   velocidade: 5
-  velocidadeRotacao: 150
+  velocidadeRotacao: 300
   targetRotacao: {x: 0, y: 0, z: 0, w: 0}
 --- !u!50 &34760015
 Rigidbody2D:

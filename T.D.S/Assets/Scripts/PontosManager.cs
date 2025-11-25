@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PontosManager : MonoBehaviour
 {
@@ -10,5 +11,6 @@ public class PontosManager : MonoBehaviour
     {
         pontos += amount;
     }
-}
     
+      
+}

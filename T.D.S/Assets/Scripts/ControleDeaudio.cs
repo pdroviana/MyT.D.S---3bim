@@ -2,42 +2,52 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-public class ControleDeaudio : MonoBehaviour
+
+public class ControleDeAudio : MonoBehaviour
 {
-    public int volume;
-    public int volumeSFX;
-    public bool musica;
+    [Header("Mixer")]
+    public AudioMixer mixer;
+
+    [Header("UI")]
     public TMP_Text musicaText;
-    
     public Slider volumeSlider;
+    public Slider volumeSFXSlider;
     public Toggle musicaToggle;
-    public Slider VolumeSFXSlider;
-    void Start()
+
+    private void Start()
     {
-        musica = musicaToggle.isOn;
-        volume = (int)volumeSlider.value;
-        volumeSFX = (int)VolumeSFXSlider.value;
+        // Inicializa texto do toggle
+        AtualizarTextoMusica(musicaToggle.isOn);
+
+        // Adiciona eventos
+        volumeSlider.onValueChanged.AddListener(AlterarVolumeMusica);
+        volumeSFXSlider.onValueChanged.AddListener(AlterarVolumeSFX);
+        musicaToggle.onValueChanged.AddListener(AtualizarTextoMusica);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void AlterarVolumeMusica(float v)
     {
-        musica = musicaToggle.isOn;
-        volume = (int)volumeSlider.value;
-        volumeSFX = (int)VolumeSFXSlider.value;
+        mixer.SetFloat("Musica", Mathf.Lerp(-80, 0, v)); 
+    }
 
+    private void AlterarVolumeSFX(float v)
+    {
+        mixer.SetFloat("SFX", Mathf.Lerp(-80,  0,v)); 
+    }
 
-        if (musica == true)
+    private void AtualizarTextoMusica(bool ligado)
+    {
+        if (ligado)
         {
             musicaText.text = "Ligado";
             musicaText.color = Color.green;
+            mixer.SetFloat("Musica", 0);
         }
-
-
         else
         {
             musicaText.text = "Desligado";
             musicaText.color = Color.red;
+            mixer.SetFloat("Musica", -80); // Mudo
         }
     }
 }

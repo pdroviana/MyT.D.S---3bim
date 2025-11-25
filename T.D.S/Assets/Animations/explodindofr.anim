@@ -92,15 +92,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.016666668
-    functionName: Morrer
+  - time: 0.71666664
+    functionName: desativa
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.71666664
-    functionName: desativa
+    functionName: Morrer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

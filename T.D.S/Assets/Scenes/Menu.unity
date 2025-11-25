@@ -3485,7 +3485,7 @@ MonoBehaviour:
   m_text: Desligar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 9ad269c99dcf42b7aedefd83dd5a7b9d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4025,7 +4025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1056190252
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4045,6 +4045,7 @@ RectTransform:
   - {fileID: 1560141274}
   - {fileID: 1914398357}
   - {fileID: 1727795499}
+  - {fileID: 1259455894}
   m_Father: {fileID: 772355732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4102,13 +4103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc62919560aead94dabfcb618258f052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 0
-  volumeSFX: 0
-  musica: 1
+  mixer: {fileID: 24100000, guid: a6d1e6b3a60b5714fa9e586c50517d99, type: 2}
   musicaText: {fileID: 913592571}
   volumeSlider: {fileID: 935591116}
+  volumeSFXSlider: {fileID: 1161580665}
   musicaToggle: {fileID: 1727795500}
-  VolumeSFXSlider: {fileID: 1161580665}
 --- !u!1 &1061539520
 GameObject:
   m_ObjectHideFlags: 0
@@ -4410,7 +4409,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4765,6 +4764,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227023971}
   m_CullTransparentMesh: 1
+--- !u!1 &1259455893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259455894}
+  - component: {fileID: 1259455895}
+  m_Layer: 5
+  m_Name: AudioControle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1259455894
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259455893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1056190252}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1259455895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259455893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc62919560aead94dabfcb618258f052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: a6d1e6b3a60b5714fa9e586c50517d99, type: 2}
+  musicaText: {fileID: 913592571}
+  volumeSlider: {fileID: 935591116}
+  volumeSFXSlider: {fileID: 1161580665}
+  musicaToggle: {fileID: 1727795500}
 --- !u!1 &1329658375
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,7 +5133,7 @@ GameObject:
   - component: {fileID: 1432056941}
   - component: {fileID: 1432056940}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MusicaMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5097,8 +5149,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1807442793991732951, guid: a6d1e6b3a60b5714fa9e586c50517d99, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 46de6b64ddedc164ba4806fa1bf50c81, type: 3}
-  m_Resource: {fileID: 8300000, guid: 46de6b64ddedc164ba4806fa1bf50c81, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b3af486b47bb53046ace92ca859fa7b1, type: 3}
+  m_Resource: {fileID: 8300000, guid: b3af486b47bb53046ace92ca859fa7b1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -5521,7 +5573,7 @@ MonoBehaviour:
   m_text: "M\xFAsica"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 9ad269c99dcf42b7aedefd83dd5a7b9d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5704,8 +5756,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1213006525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6059,7 +6111,7 @@ MonoBehaviour:
   m_text: Volume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 9ad269c99dcf42b7aedefd83dd5a7b9d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6559,7 +6611,7 @@ MonoBehaviour:
   m_text: Efeitos Sonoros
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 9ad269c99dcf42b7aedefd83dd5a7b9d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7076,7 +7128,7 @@ RectTransform:
   m_Father: {fileID: 1527728121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
